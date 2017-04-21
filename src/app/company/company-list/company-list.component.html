@@ -1,3 +1,4 @@
+<button class="btn btn-success float-right" routerLink="/company/edit/new">Add</button>
 <div *ngIf="companies$ | async as companies_local; else loading">
   <fbc-company-table [companies]="companies_local"></fbc-company-table>
 </div>
