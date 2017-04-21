@@ -2,8 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CompanyService } from '../company.service';
 import { Company } from '../company';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
+
 
 @Component({
   selector: 'fbc-company-list',
