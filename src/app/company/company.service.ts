@@ -9,7 +9,7 @@ export class CompanyService {
 
   constructor(private http: Http) { }
  
-  getCompanies() : any { 
+  getCompanies() : any {
     return this.http.get(`${environment.API_BASE}/company`)
     .map(response => response.json())
     .catch(this.errorHandler);
