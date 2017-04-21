@@ -3,6 +3,7 @@ import { CompanyService } from '../company.service';
 import { Company } from '../company';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/delay';
 
 @Component({
   selector: 'fbc-company-list',
@@ -10,7 +11,7 @@ import 'rxjs/add/operator/do';
   styleUrls: ['./company-list.component.scss']
 })
 export class CompanyListComponent implements OnInit {
-  //companies$: Observable<Company[]>;    
+  companies$: Observable<Company[]>;
   companies: Company[];
 
   // Using private keyword creates a class-level private variable and assign what is passed in
@@ -22,14 +23,16 @@ export class CompanyListComponent implements OnInit {
   }
 
   getCompanies(){
-    // this.companies$ =this.companyService.getCompanies();
-    this.companyService.getCompanies()
-    .do(
-      value=>console.log()
-    )
-    .subscribe(
-      companies => this.companies = companies,
-      error => console.log('ERROR', error),
-      () => console.log('Completed')   );
+    this.companies$ =this.companyService.getCompanies().delay(2000);
+
+    // this.companyService.get
+    // this.companyService.getCompanies()
+    // .do(
+    //   value=>console.log('value ', value)
+    // )
+    // .subscribe(
+    //   companies => this.companies = companies,
+    //   error => console.log('ERROR : ', error),
+    //   () => console.log('Completed')   );
   }
 }
