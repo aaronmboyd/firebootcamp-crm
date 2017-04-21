@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CompanyService } from '../company.service';
 import { Company } from '../company';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'fbc-company-list',
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./company-list.component.scss']
 })
 export class CompanyListComponent implements OnInit {
-  companies$: Observable<Company[]>;    
+  //companies$: Observable<Company[]>;    
   companies: Company[];
 
   // Using private keyword creates a class-level private variable and assign what is passed in
@@ -23,6 +24,9 @@ export class CompanyListComponent implements OnInit {
   getCompanies(){
     // this.companies$ =this.companyService.getCompanies();
     this.companyService.getCompanies()
+    .do(
+      value=>console.log()
+    )
     .subscribe(
       companies => this.companies = companies,
       error => console.log('ERROR', error),
