@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CompanyService } from '../company.service';
 import { Company } from '../company';
 import { Observable } from 'rxjs/Observable';
@@ -8,7 +8,8 @@ import 'rxjs/add/operator/delay';
 @Component({
   selector: 'fbc-company-list',
   templateUrl: './company-list.component.html',
-  styleUrls: ['./company-list.component.scss']
+  styleUrls: ['./company-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CompanyListComponent implements OnInit {
   companies$: Observable<Company[]>;

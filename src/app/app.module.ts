@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompanyListComponent } from './company/company-list/company-list.component';
 import {CompanyService} from './company/company.service'
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CompanyTableComponent } from './company/company-table/company-table.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompanyListComponent
+    CompanyListComponent,
+    CompanyTableComponent
   ],
   imports: [
     BrowserModule,
