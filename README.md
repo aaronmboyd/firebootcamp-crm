@@ -1,5 +1,6 @@
 # FirebootcampCrm
 
+Simple CRM application using Angular. Developed on the day as part of [SSW's](http://ssw.com.au) Angular Superpowers course (Melbourne 2017).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
